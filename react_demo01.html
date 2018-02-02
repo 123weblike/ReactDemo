@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="reactContainer"></div>
+    <script src="./common/react.js"></script>
+    <script src="./common/react-dom.js"></script>
+    <script>
+        var HelloComponent=React.createClass({ //创建组件
+            render:function(){ //render将模板转换成Html语言
+                return  React.createElement('h1',null,'Hello world')
+            }
+        });
+
+        ReactDOM.render(
+            React.createElement(HelloComponent,null),
+            document.getElementById('reactContainer'));
+    </script>
+</body>
+</html>
