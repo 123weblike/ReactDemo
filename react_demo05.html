@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>state</title>
+</head>
+<body>
+<div id="reactContainer"></div>
+<script src="./common/react.js"></script>
+<script src="./common/react-dom.js"></script>
+<script src="https://cdn.bootcss.com/babel-core/5.8.38/browser.min.js"></script>
+<script type="text/babel">
+   var  TextBoxComponent=React.createClass({ //TextBoxComponent 首字母必须大写
+       getInitialState:function(){  //初始化状态
+           return {enable:false};//文本框是否开启
+       },
+       handleClick:function(event){
+           this.setState({enable:!this.state.enable})     //重新渲染状态
+       },
+       render:function(){
+           return (<p>
+                   <input type="text" disabled={this.state.enable}/>
+                   <button onClick={this.handleClick}>改变textBox的状态</button>
+               </p>
+           )
+       }
+   });
+    ReactDOM.render(<TextBoxComponent/>,document.getElementById('reactContainer'));
+</script>
+</body>
+</html>
