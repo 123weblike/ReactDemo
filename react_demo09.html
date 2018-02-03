@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this.props.children</title>
+</head>
+<body>
+<div id="demo"></div>
+<script src="./common/react.js"></script>
+<script src="./common/react-dom.js"></script>
+<script src="https://cdn.bootcss.com/babel-core/5.8.38/browser.min.js"></script>
+<script type="text/babel">
+    var NotesList=React.createClass({
+        render:function(){
+            return (
+                <ol>
+                    {React.Children.map(this.props.children,function(child){
+                        return (<li>{child}</li>)
+                    })}
+                </ol>
+            )
+        }
+    });
+    ReactDOM.render(
+        <NotesList>
+            <span>zhanhfan</span>
+            <span>好帅</span>
+            <span>React教程</span>
+        </NotesList>,document.getElementById('demo')
+    );
+</script>
+</body>
+</html>
