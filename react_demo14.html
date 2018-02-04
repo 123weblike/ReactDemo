@@ -20,7 +20,7 @@
             console.log(this.state.value);
         },
         render:function(){
-            //可控组件：value必须绑定state,必须有onChange事件
+            //可控组件：value必须绑定state,必须有onChange事件的监控
             return (
                 <div>
                     <input type="text" value={this.state.value} onChange={this.handleChange}/>
